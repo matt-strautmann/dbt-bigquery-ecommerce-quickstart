@@ -1,0 +1,47 @@
+version: 2
+
+sources:
+  - name: hubspot
+    database: "{{ env_var('DBT_PROJECT_ID') }}"
+    schema: "{{ env_var('AIRBYTE_SCHEMA', 'raw') }}"
+    loader: airbyte
+    loaded_at_field: _airbyte_emitted_at
+    tables:
+      - name: _airbyte_raw_contacts
+        identifier: contacts
+        description: Raw contact data from HubSpot
+        columns:
+          - name: _airbyte_data
+            description: Raw JSON data
+            tests:
+              - not_null
+          - name: _airbyte_emitted_at
+            description: Timestamp when record was synced
+            tests:
+              - not_null
+      
+      - name: _airbyte_raw_companies
+        identifier: companies
+        description: Raw company data
+        columns:
+          - name: _airbyte_data
+            description: Raw JSON data
+            tests:
+              - not_null
+          - name: _airbyte_emitted_at
+            description: Timestamp when record was synced
+            tests:
+              - not_null
+      
+      - name: _airbyte_raw_deals
+        identifier: deals
+        description: Raw deal/opportunity data
+        columns:
+          - name: _airbyte_data
+            description: Raw JSON data
+            tests:
+              - not_null
+          - name: _airbyte_emitted_at
+            description: Timestamp when record was synced
+            tests:
+              - not_null

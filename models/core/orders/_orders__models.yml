@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: core__order_history
+    description: >
+      Core order history model that provides a complete view of each order including
+      items, payments, shipments, and discounts. This model serves as the single source
+      of truth for order information.
+    config:
+      materialized: incremental
+      unique_key: order_id
+      partition_by:
+        field: order_created_at
+        data_type: timestamp
+        granularity: day
+      cluster_by: ['customer_id', 'order_status']
+    
+    columns:
+      - name: order_id
+        description: Unique identifier for the order
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              to: ref('stg_shopify__orders')
+              field: order_id
+
+      - name: customer_id
+        description: ID of the customer who placed the order
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_shopify__customers')
+              field: customer_id
+
+      - name: total_amount
+        description: Total order amount including tax and shipping, minus discounts
+        tests:
+          - not_null
+          - positive_values
+          - dbt_expectations.expect_column_pair_values_A_to_be_greater_than_B:
+              column_A: total_amount
+              column_B: subtotal
+
+      - name: order_status
+        description: Current status of the order
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['pending', 'processing', 'shipped', 'delivered', 'cancelled']
+
+      - name: order_type
+        description: Classification of order based on item count
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Single Item', 'Multi Item']
+
+      - name: order_size_segment
+        description: Order size classification based on total amount
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Large Order', 'Medium Order', 'Small Order']
+
+    tests:
+      - dbt_expectations.expect_column_values_to_be_between:
+          column_name: hours_to_first_shipment
+          min_value: 0
+      - dbt_expectations.expect_compound_columns_to_be_unique:
+          column_list: ['customer_id', 'order_number']

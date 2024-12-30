@@ -1,0 +1,4 @@
+_airbyte_data,_airbyte_emitted_at
+"{""id"":3001,""title"":""Marketing Analytics Pro"",""product_type"":""Software"",""created_at"":""2024-01-01T08:00:00Z"",""variants"":[{""price"":""99.99"",""sku"":""MAP-001""}],""tags"":[""analytics"",""software"",""marketing""]}",2024-01-01T08:01:00Z
+"{""id"":3002,""title"":""Social Media Manager"",""product_type"":""Software"",""created_at"":""2024-01-01T08:00:00Z"",""variants"":[{""price"":""74.99"",""sku"":""SMM-001""}],""tags"":[""social_media"",""software"",""marketing""]}",2024-01-01T08:01:00Z
+"{""id"":3003,""title"":""Enterprise Analytics Suite"",""product_type"":""Software"",""created_at"":""2024-01-01T08:00:00Z"",""variants"":[{""price"":""199.99"",""sku"":""EAS-001""}],""tags"":[""analytics"",""software"",""enterprise""]}",2024-01-01T08:01:00Z

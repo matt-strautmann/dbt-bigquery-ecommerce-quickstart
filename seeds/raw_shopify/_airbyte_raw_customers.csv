@@ -1,0 +1,4 @@
+_airbyte_data,_airbyte_emitted_at
+"{""id"":2001,""email"":""john@example.com"",""first_name"":""John"",""last_name"":""Doe"",""created_at"":""2024-01-01T09:00:00Z"",""orders_count"":1,""total_spent"":""99.99"",""tags"":[""new_customer""]}",2024-01-01T09:01:00Z
+"{""id"":2002,""email"":""sarah@example.com"",""first_name"":""Sarah"",""last_name"":""Smith"",""created_at"":""2024-01-02T10:00:00Z"",""orders_count"":1,""total_spent"":""149.99"",""tags"":[""new_customer"",""newsletter_subscriber""]}",2024-01-02T10:01:00Z
+"{""id"":2003,""email"":""mike@example.com"",""first_name"":""Mike"",""last_name"":""Johnson"",""created_at"":""2024-01-03T11:00:00Z"",""orders_count"":1,""total_spent"":""199.99"",""tags"":[""new_customer"",""high_value""]}",2024-01-03T11:01:00Z

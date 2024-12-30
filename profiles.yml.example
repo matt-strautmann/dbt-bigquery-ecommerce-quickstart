@@ -1,0 +1,43 @@
+# This is an example profiles.yml file for BigQuery OAuth authentication
+# Copy this file to ~/.dbt/profiles.yml and update the values
+
+dbt_bq_getting_started:
+  target: dev  # Default target to use
+  outputs:
+    # Development environment
+    dev:
+      type: bigquery
+      method: oauth  # Authentication method
+      project: "{{ env_var('DBT_PROJECT_ID') }}"  # Your GCP project ID
+      dataset: "{{ env_var('DBT_DEV_DATASET') }}"  # Default dataset for dev
+      threads: 4  # Number of concurrent operations
+      timeout_seconds: 300  # Query timeout
+      location: US  # BigQuery data location
+      priority: interactive  # Query priority
+      retries: 3  # Number of retries for failed queries
+      # OAuth-specific configurations
+      oauth_credentials:
+        token: "{{ env_var('DBT_OAUTH_TOKEN', '') }}"  # Optional: cached OAuth token
+        refresh_token: "{{ env_var('DBT_REFRESH_TOKEN', '') }}"  # Optional: OAuth refresh token
+      
+      # Optional configurations
+      maximum_bytes_billed: 1000000000000  # 1TB limit for dev queries
+      execution_project: "{{ env_var('DBT_EXECUTION_PROJECT', '') }}"  # Optional: separate project for query execution
+      impersonate_service_account: "{{ env_var('DBT_IMPERSONATE_SA', '') }}"  # Optional: service account to impersonate
+
+    # Production environment
+    prod:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('DBT_PROJECT_ID') }}"
+      dataset: "{{ env_var('DBT_PROD_DATASET') }}"  # Default dataset for prod
+      threads: 8  # More threads for production
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      retries: 3
+      
+      # Production-specific settings
+      maximum_bytes_billed: 5000000000000  # 5TB limit for prod queries
+      execution_project: "{{ env_var('DBT_EXECUTION_PROJECT', '') }}"
+      impersonate_service_account: "{{ env_var('DBT_IMPERSONATE_SA', '') }}"
