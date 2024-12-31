@@ -195,3 +195,7 @@ This template is designed to work with Airbyte's BigQuery destination. Key point
 ## 📝 License
 
 MIT License - see [LICENSE](LICENSE) file
+
+## BigQuery Setup Guide
+
+For detailed instructions on setting up your BigQuery connection, including OAuth authentication and testing, see our [BigQuery Setup Guide](docs/bigquery_setup.md).
