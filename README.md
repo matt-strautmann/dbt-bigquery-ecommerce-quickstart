@@ -48,8 +48,8 @@ models/
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/dbt_bq_getting_started_template.git
-   cd dbt_bq_getting_started_template
+   git clone https://github.com/yourusername/dbt-bigquery-quickstart-project.git
+   cd dbt-bigquery-quickstart-project
    ```
 
 2. **Set Up Environment Variables**:
