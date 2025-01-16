@@ -14,34 +14,33 @@ Welcome to your modern data stack template! This project demonstrates how to bui
 5. **Airbyte** instance set up with sources configured
 
 ## 🏗️ Project Structure
-
 ```
-models/
-├── staging/              # Raw data standardization
-│   ├── stg_stripe/      # Payment processing
-│   │   ├── base/        # Raw JSON parsing
-│   │   │   └── base_stripe__customers.sql
-│   │   ├── stg_stripe__customers.sql
-│   │   └── _stripe_sources.yml
+📂 models/
+├── 📁 staging/              # 🛠️ Raw data standardization
+│   ├── 📁 stg_stripe/       # 💳 Payment processing
+│   │   ├── 📁 base/         # 📜 Raw JSON parsing
+│   │   │   └── 📄 base_stripe__customers.sql
+│   │   ├── 📄 stg_stripe__customers.sql
+│   │   └── 📄 _stripe_sources.yml
 │   │
-│   ├── stg_hubspot/     # Marketing automation
-│   │   ├── base/
-│   │   └── _hubspot_sources.yml
+│   ├── 📁 stg_hubspot/      # 📈 Marketing automation
+│   │   ├── 📁 base/
+│   │   └── 📄 _hubspot_sources.yml
 │   │
-│   └── stg_shopify/     # E-commerce platform
-│       ├── base/
-│       └── _shopify_sources.yml
+│   └── 📁 stg_shopify/      # 🛒 E-commerce platform
+│       ├── 📁 base/
+│       └── 📄 _shopify_sources.yml
 │
-├── intermediate/         # Business logic layer
-│   ├── finance/
-│   ├── marketing/
-│   └── sales/
+├── 📁 intermediate/         # 🔍 Business logic layer
+│   ├── 📁 finance/
+│   ├── 📁 marketing/
+│   └── 📁 sales/
 │
-└── marts/               # Business-specific models
-    ├── core/            # Core business entities
-    ├── finance/         # Finance-specific models
-    ├── marketing/       # Marketing-specific models
-    └── sales/          # Sales-specific models
+└── 📁 marts/                # 📊 Business-specific models
+    ├── 📁 core/             # 🔑 Core business entities
+    ├── 📁 finance/          # 💰 Finance-specific models
+    ├── 📁 marketing/        # 📣 Marketing-specific models
+    └── 📁 sales/            # 🛒 Sales-specific models
 ```
 
 ## 🔄 Setup Instructions
@@ -199,3 +198,26 @@ MIT License - see [LICENSE](LICENSE) file
 ## BigQuery Setup Guide
 
 For detailed instructions on setting up your BigQuery connection, including OAuth authentication and testing, see our [BigQuery Setup Guide](docs/bigquery_setup.md).
+
+---
+# ⭐ Credits & Connect  
+
+## 🚀 About This Repository  
+This repository is maintained by [Matt Strautmann](https://www.linkedin.com/in/mattstrautmann), an experienced **is working closely with Founder/CEOs to use your Data to improve your bottom line. Period.** Let me help you **trust your data. know your customer. improve your bottom line.**  
+
+### Why Star This Repository?  
+Starring this repository helps me understand which tools, templates, and projects bring the most value to the community. Your support motivates me to keep producing high-quality content and maintain these resources for everyone!  
+
+## 🌟 Support This Project  
+If this repository has helped you:  
+1. Give it a ⭐ to show your appreciation!  
+2. Share it with others who might find it useful.  
+
+## 🤝 Connect with Me  
+I’d love to hear how you’re using this repository or discuss how I can help with your next project. Let’s connect:  
+- **LinkedIn**: [Matt Strautmann](https://www.linkedin.com/in/mattstrautmann)  
+- **GitHub**: [Matt Strautmann](https://github.com/matt-strautmann)
+
+---
+
+
